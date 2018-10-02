@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 
 import { Paper, Typography, TextField, Button } from '@material-ui/core'
 import { List, ListItem, ListItemText } from '@material-ui/core'
-import {ListItemSecondaryAction, IconButton } from '@material-ui/core'
+import { ListItemSecondaryAction, IconButton } from '@material-ui/core'
 import { Delete } from '@material-ui/icons'
 import { withStyles } from '@material-ui/core/styles'
 
@@ -19,9 +19,9 @@ const styles = {
   form: {
     display: 'flex',
     alignItems: 'baseline',
-    justifyContent: 'space-evenly'
+    justifyContent: 'space-around'
   }
-    };
+};
 
 class App extends Component {
   
@@ -75,20 +75,22 @@ class App extends Component {
           Exercises
         </Typography>
       
-        <form onSubmit={this.handleCreate}>
-          <TextField
-            name='title'
-            label='Exercise'
-            value={title}
-            onChange={this.handleChange}
-            margin='normal'
-          />
-          <Button className={classes.button}
-            type='submit'
-            color='primary'
-            variant="contained"
-          >Create
-          </Button>
+        <form onSubmit={this.handleCreate} className={classes.form}>
+            <TextField
+              name='title'
+              label='Exercise'
+              value={title}
+              onChange={this.handleChange}
+              margin='normal'
+            />
+            
+            <Button className={classes.button}
+              type='submit'
+              color='primary'
+              variant="contained"
+            >Create
+            </Button>
+          
         </form>
         
         <List>
