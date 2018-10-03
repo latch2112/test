@@ -71,6 +71,7 @@ class App extends Component {
     
     return (
       <Paper className={classes.root}>
+        
         <Typography variant='display1' align='center' gutterBottom>
           Exercises
         </Typography>
@@ -105,8 +106,13 @@ class App extends Component {
           </ListItem>
         )}
         </List>
+
+        <Typography variant='display' align='center' gutterBottom>
+          --- end ---
+        </Typography>
       
       </Paper>
+    
     );
   }
 }
