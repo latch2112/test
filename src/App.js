@@ -10,10 +10,10 @@ import { withStyles } from '@material-ui/core/styles'
 
 import './App.css';
 
-const styles = {
+const styles = ({ spacing: { unit } }) => ({
   root: {
-    margin: 20,
-    padding: 20,
+    margin: unit,
+    padding: unit *3,
     maxWidth: 400
   },
   form: {
@@ -21,7 +21,7 @@ const styles = {
     alignItems: 'baseline',
     justifyContent: 'space-around'
   }
-};
+});
 
 class App extends Component {
   
@@ -32,16 +32,16 @@ class App extends Component {
       { id: 3, title: 'Squats' }
     ],
     title: ''
-  }
+  };
 
 
   handleChange = ({ target: { name, value } }) =>
     this.setState({
       [name]: value
-    })
+    });
 
   handleCreate = e => {
-    e.preventDefault()
+    e.preventDefault();
     if (this.state.title) {
       this.setState(({ exercises, title }) => ({
         exercises: [
@@ -54,14 +54,14 @@ class App extends Component {
         title: ''
       }))
     }
-  }
+  };
   
   
   
   handleDelete = id =>
     this.setState(({ exercises }) => ({
       exercises: exercises.filter(ex => ex.id !== id)
-    }))
+    }));
   
   
   render() {
